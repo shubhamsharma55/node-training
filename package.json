@@ -1,10 +1,21 @@
 {
   "dependencies": {
     "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "morgan": "^1.10.0",
+    "mysql2": "^3.6.0",
     "nodemon": "^3.0.1",
     "sequelize": "^6.32.1",
     "sequelize-cli": "^6.6.1"
-  }
+  },
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "name": "training",
+  "description": "Node.js training Git project: Learn Node.js development with Git version control. Hands-on exercises.",
+  "version": "1.0.0",
+  "main": "App.js",
+  "author": "",
+  "license": "ISC"
 }
