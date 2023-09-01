@@ -7,8 +7,9 @@ exports.setTimestamp = (req, res, next) => {
   next();
 };
 
-exports.userGet = async (req, res, next) => {
+exports.userRegister = async (req, res, next) => {
   try {
+    console.log(req.body);
     const { name, username, email, password } = req.body;
     const saltRounds = 10;
     const hashedPassword = await bcrypt.hash(password, saltRounds);
@@ -33,6 +34,33 @@ exports.userGet = async (req, res, next) => {
     } else{
         throw new Error("User password could not be hashed");
     }
+  } catch (error) {
+    res.status(500).json({
+      message: "failed",
+      payload: {
+        data: error,
+      },
+    });
+  }
+};
+
+
+
+exports.getUsers = async (req, res, next) => {
+  try {
+      const users = await UserModel.findAll({
+        attributes: ["name", "username", "email"],
+      });
+      if (users) {
+        return res.status(201).json({
+          message: "success",
+          payload: {
+            data: users,
+          },
+        });
+      } else {
+        throw new Error("User not found");
+      }
   } catch (error) {
     res.status(500).json({
       message: "failed",

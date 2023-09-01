@@ -1,0 +1,42 @@
+/* Add this custom CSS to your <style> section or a separate CSS file */
+h2{
+    text-decoration: underline;
+    text-align: center;
+}
+
+/* Style for the table container */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Style for the table headers */
+table thead th {
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+}
+
+/* Style for the table rows */
+table tbody tr {
+    text-align: center;
+}
+
+/* Style for alternating row colors */
+table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Style for table cell padding */
+table td {
+    padding: 8px;
+}
+
+.loader{
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.39);
+}
