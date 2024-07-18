@@ -2,7 +2,8 @@
 const app = require("./App");
 const dotenv = require('dotenv');
 const result = dotenv.config({ path: './Config/.env' });
-const PORT = process.env.PORT;
+const port = 3000;
+// const PORT = process.env.PORT;
 const HOST = process.env.HOST;
 // EXPRESS APP IMPORT
 
@@ -34,8 +35,9 @@ const sequelize = new Sequelize(DB.DB_NAME, DB.DB_USER, DB.DB_PASSWORD, {
 
 
 
-app.listen(PORT, HOST, function () {
-  console.log(`Server Running On Port ${PORT} In ${process.env.NODE_ENV} Env.`);
+// 
+app.listen(port, () => {
+  console.log(`Server is running at http://localhost:${port}`);
 });
 
 
